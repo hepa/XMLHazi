@@ -1,0 +1,68 @@
+package filters.family;
+
+import business.Family;
+import filters.student.*;
+import filters.teacher.*;
+import business.Teacher;
+import business.Message;
+import business.Student;
+import dao.MessageDAO;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.apache.log4j.Logger;
+
+@WebFilter("/family/inbox.jsp")
+public class Inbox implements Filter {
+
+    private FilterConfig filterConfig;
+    private Logger logger;
+
+    @Override
+    public void init(FilterConfig fc) throws ServletException {
+        filterConfig = fc;
+        logger = Logger.getRootLogger();
+    }
+
+    @Override
+    public void doFilter(ServletRequest req, ServletResponse resp, FilterChain fc) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) resp;
+
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
+        HttpSession session = request.getSession();
+        Family f = (Family)session.getAttribute("family");
+        
+        try {
+            ArrayList<Message> messages = Message.getAllInstances(f.getUsername());
+            Collections.sort(messages);
+            req.setAttribute("messages", messages);
+        } catch (SQLException ex) {
+            logger.error(ex.getMessage());
+        }
+        
+        
+        fc.doFilter(req, resp);
+
+    }
+
+    @Override
+    public void destroy() {
+        filterConfig = null;
+    }
+}

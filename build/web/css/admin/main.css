@@ -1,0 +1,12 @@
+.box {
+    width: 960px;
+}
+
+.box .content table tr td {
+    padding: 3px;
+}
+
+.box .content form a {
+    float: left;    
+    padding: 5px 10px;
+}

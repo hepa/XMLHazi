@@ -1,0 +1,21 @@
+/* tables */
+table.sortableTable {
+    width: 100%;
+}
+
+table.sortableTable > thead > tr > th.header {        
+    text-align: left;
+    font-size: 11px;      
+}
+table.sortableTable thead tr .header {
+    background-image: url(bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.sortableTable thead tr .headerSortUp {
+    background-image: url(asc.gif);
+}
+table.sortableTable thead tr .headerSortDown {
+    background-image: url(desc.gif);
+}

@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;    
+}
+
+#container {
+    margin: 5px auto;    
+    width: 970px;
+}
+
+#container #left {
+    float: left;        
+    width: 600px;
+}
+
+#container #right {
+    float: right;    
+    width: 370px;     
+}
+
+.box {
+    background-color: white;     
+    box-shadow: 0 1px 1px #ccc;
+    float: left;        
+    margin: 10px 0;
+    padding: 5px;
+    width: 580px;
+}
+
+.box > .header {    
+    font-size: 16px;
+    padding: 5px;       
+}
+
+.box > .header h2 {
+    color: black;
+    font-size: 20px;                
+}
+
+.box .content {
+    padding: 5px;
+}
+
+.box .content form a {
+    color: black;
+}
+
+.pin {
+    background: white;   
+    box-shadow: 0 1px 1px #ccc;
+    margin: 10px 0;
+    padding: 5px;
+    width: 360px;
+}
+
+.pin > .header {
+    color: black;
+    font-size: 16px; 
+    font-weight: bold;
+    padding: 5px;
+}
+
+.pin > .content {
+    padding: 5px;
+}
+
+.pin > .content form a {
+    color: black;
+}
+
+.clear {
+    clear: both;
+}
+
+#footer {
+    margin-top: 100px;
+    height: 100px;
+    width: 100%;
+    background-color: #4096ee;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: white;
+}
+
+.popup {
+    background: #7abcff;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid #4096ee;
+    padding: 8px;    
+    width: 203px; 
+    bottom: 20px;
+    left: 20px;
+    position: absolute;    
+    display: none;
+    opacity: 0.9;
+}
+
+.popup_success {
+    background: greenyellow;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: 1px solid green;
+    padding: 8px;
+    padding-left: 30px;
+    width: 203px;
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    display: none;
+    opacity: 0.9;
+    background-image: url(../images/tick-button.png);
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+}
+
+.popup_error {
+    background: tomato;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: 1px solid #d20202;
+    padding: 8px;
+    padding-left: 30px;
+    width: 203px;
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    display: none;
+    opacity: 0.9;
+    background-image: url(../images/exclamation-red.png);
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+}
+
+a {    
+    text-decoration: none;
+    color: #0044cc;
+}
+
+a:visited {
+    color: #0044cc;    
+}
+
+.settingsTable {
+    width: 100%;
+}
+
+.settingsTable tr td {
+    padding: 5px 0;
+}

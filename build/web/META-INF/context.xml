@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/Neptun">
+    <Resource name="jdbc/neptun" auth="Conatiner"
+        maxActive="100" maxIdle="300" maxWait="10000" 
+        username="root" password=""
+        url="jdbc:mysql://localhost:3306/neptun?autoReconnect=true&amp;useEncoding=true&amp;characterEncoding=UTF-8"
+        logAbandoned="true" removeAbandoned="true"
+        removeAbandonedTimeout="60" type="javax.sql.DataSource"        
+    />
+</Context>
